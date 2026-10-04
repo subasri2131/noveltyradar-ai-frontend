@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoveltyRadar AI - Evidence-Based Project Evaluation</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>NoveltyRadar AI</h1>
+                <span class="nav-tagline">Evidence-Based Project Evaluation</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link active" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="input">Evaluate Project</a>
+                <a href="#" class="nav-link" data-page="about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="hero">
+                <h1 class="hero-title">Evaluate Your Project Idea with AI</h1>
+                <p class="hero-subtitle">Evidence-based, explainable research and student project evaluation platform</p>
+                <button class="btn btn-primary btn-large" onclick="navigateTo('input')">
+                    Evaluate Project Idea
+                </button>
+            </div>
+
+            <div class="features-section">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Novelty Analysis</h3>
+                        <p>Get a comprehensive novelty score based on claim similarity and gap analysis</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Feasibility Assessment</h3>
+                        <p>Evaluate time, skills, data, and budget feasibility for your project</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Research Papers</h3>
+                        <p>Access relevant research papers from Semantic Scholar and OpenAlex</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Gap Analysis</h3>
+                        <p>Claim-wise gap analysis to identify research opportunities</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>Report Generation</h3>
+                        <p>Get comprehensive, downloadable reports with recommendations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Explainable AI</h3>
+                        <p>Transparent scoring and reasoning for every evaluation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-it-works">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Enter Project Details</h3>
+                        <p>Provide your project title, description, domain, and constraints</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Analysis</h3>
+                        <p>Our system analyzes claims, searches papers, and evaluates novelty</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Results</h3>
+                        <p>Receive detailed scores, gap analysis, and recommendations</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Download Report</h3>
+                        <p>Get a comprehensive report for your project evaluation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Input Page -->
+        <section id="input-page" class="page">
+            <div class="container">
+                <h1 class="page-title">Evaluate Your Project Idea</h1>
+                <p class="page-subtitle">Provide your project details for comprehensive AI-powered evaluation</p>
+
+                <form id="project-form" class="project-form">
+                    <div class="form-group">
+                        <label for="project-title" class="form-label">Project Title *</label>
+                        <input type="text" id="project-title" class="form-input" placeholder="Enter your project title" required maxlength="200">
+                        <span class="form-hint">Maximum 200 characters</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-description" class="form-label">Project Description *</label>
+                        <textarea id="project-description" class="form-textarea" placeholder="Describe your project idea in detail" required maxlength="2000" rows="6"></textarea>
+                        <span class="form-hint">Maximum 2000 characters</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-domain" class="form-label">Domain *</label>
+                        <select id="project-domain" class="form-select" required>
+                            <option value="">Select a domain</option>
+                            <option value="CV">Computer Vision (CV)</option>
+                            <option value="NLP">Natural Language Processing (NLP)</option>
+                            <option value="ML">Machine Learning (ML)</option>
+                            <option value="DL">Deep Learning (DL)</option>
+                            <option value="AI">Artificial Intelligence (AI)</option>
+                            <option value="IoT">Internet of Things (IoT)</option>
+                            <option value="Blockchain">Blockchain</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Robotics">Robotics</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="time-available" class="form-label">Time Available (weeks) *</label>
+                            <input type="number" id="time-available" class="form-input" placeholder="e.g., 8" required min="1" max="52">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Budget (USD) *</label>
+                            <input type="number" id="budget" class="form-input" placeholder="e.g., 500" required min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skills" class="form-label">Skills *</label>
+                        <textarea id="skills" class="form-textarea" placeholder="List your relevant skills (e.g., Python, TensorFlow, Web Development)" required maxlength="500" rows="3"></textarea>
+                        <span class="form-hint">Maximum 500 characters</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="constraints" class="form-label">Constraints</label>
+                        <textarea id="constraints" class="form-textarea" placeholder="Any constraints or limitations (e.g., hardware, data availability, team size)" maxlength="500" rows="3"></textarea>
+                        <span class="form-hint">Maximum 500 characters (optional)</span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Analyze Project</button>
+                        <button type="reset" class="btn btn-secondary">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Loading Page -->
+        <section id="loading-page" class="page">
+            <div class="loading-container">
+                <div class="loading-animation">
+                    <div class="spinner"></div>
+                </div>
+                <h2 class="loading-title">Analyzing Your Project</h2>
+                <p class="loading-subtitle">Please wait while we evaluate your project idea</p>
+                <div class="loading-steps">
+                    <div class="loading-step" data-step="1">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Understanding project idea</span>
+                    </div>
+                    <div class="loading-step" data-step="2">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Extracting project claims</span>
+                    </div>
+                    <div class="loading-step" data-step="3">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Searching research papers</span>
+                    </div>
+                    <div class="loading-step" data-step="4">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Comparing similar research</span>
+                    </div>
+                    <div class="loading-step" data-step="5">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Performing gap analysis</span>
+                    </div>
+                    <div class="loading-step" data-step="6">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Evaluating novelty</span>
+                    </div>
+                    <div class="loading-step" data-step="7">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Evaluating feasibility</span>
+                    </div>
+                    <div class="loading-step" data-step="8">
+                        <div class="step-indicator"></div>
+                        <span class="step-text">Preparing recommendations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Page -->
+        <section id="results-page" class="page">
+            <div class="container">
+                <div class="results-header">
+                    <h1 class="page-title">Analysis Results</h1>
+                    <p class="page-subtitle" id="results-project-title">Project: [Title]</p>
+                    <button class="btn btn-secondary" onclick="navigateTo('input')">Evaluate Another Project</button>
+                </div>
+
+                <!-- Score Cards -->
+                <div class="score-cards">
+                    <div class="score-card">
+                        <h3>Novelty Score</h3>
+                        <div class="score-value" id="novelty-score">--</div>
+                        <div class="score-bar">
+                            <div class="score-fill" id="novelty-bar"></div>
+                        </div>
+                        <p class="score-label">Novelty Assessment</p>
+                    </div>
+                    <div class="score-card">
+                        <h3>Feasibility Score</h3>
+                        <div class="score-value" id="feasibility-score">--</div>
+                        <div class="score-bar">
+                            <div class="score-fill" id="feasibility-bar"></div>
+                        </div>
+                        <p class="score-label">Feasibility Assessment</p>
+                    </div>
+                </div>
+
+                <!-- Key Findings -->
+                <div class="key-findings">
+                    <h2 class="section-title">Key Findings</h2>
+                    <div class="findings-content" id="key-findings-content">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="papers">Research Papers</button>
+                        <button class="tab" data-tab="gap-analysis">Gap Analysis</button>
+                        <button class="tab" data-tab="novelty">Novelty Details</button>
+                        <button class="tab" data-tab="feasibility">Feasibility Details</button>
+                        <button class="tab" data-tab="directions">Improved Directions</button>
+                        <button class="tab" data-tab="risks">Risks & Recommendations</button>
+                    </div>
+
+                    <!-- Papers Tab -->
+                    <div class="tab-content active" id="papers-tab">
+                        <div class="tab-header">
+                            <h2>Research Papers</h2>
+                            <div class="papers-controls">
+                                <input type="text" id="paper-search" class="search-input" placeholder="Search papers...">
+                                <select id="paper-sort" class="sort-select">
+                                    <option value="relevance">Sort by Relevance</option>
+                                    <option value="year">Sort by Year</option>
+                                    <option value="citations">Sort by Citations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="papers-list" id="papers-list">
+                            <!-- Dynamic papers -->
+                        </div>
+                    </div>
+
+                    <!-- Gap Analysis Tab -->
+                    <div class="tab-content" id="gap-analysis-tab">
+                        <h2>Claim-wise Gap Analysis</h2>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Claim</th>
+                                        <th>Similar Papers</th>
+                                        <th>Similarity Level</th>
+                                        <th>Gap Description</th>
+                                        <th>Risk / Opportunity</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="gap-table-body">
+                                    <!-- Dynamic content -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Novelty Tab -->
+                    <div class="tab-content" id="novelty-tab">
+                        <h2>Novelty Score Breakdown</h2>
+                        <div class="novelty-details" id="novelty-details">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+
+                    <!-- Feasibility Tab -->
+                    <div class="tab-content" id="feasibility-tab">
+                        <h2>Feasibility Score Breakdown</h2>
+                        <div class="feasibility-details" id="feasibility-details">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+
+                    <!-- Improved Directions Tab -->
+                    <div class="tab-content" id="directions-tab">
+                        <h2>Improved Project Directions</h2>
+                        <div class="directions-grid" id="directions-grid">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+
+                    <!-- Risks Tab -->
+                    <div class="tab-content" id="risks-tab">
+                        <h2>Risks and Recommendations</h2>
+                        <div class="risks-content" id="risks-content">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Actions -->
+                <div class="report-actions">
+                    <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Page -->
+        <section id="report-page" class="page">
+            <div class="container">
+                <div class="report-header">
+                    <h1 class="page-title">Project Evaluation Report</h1>
+                    <div class="report-actions-top">
+                        <button class="btn btn-primary" onclick="printReport()">Print Report</button>
+                        <button class="btn btn-secondary" onclick="downloadReport()">Download Report</button>
+                        <button class="btn btn-secondary" onclick="navigateTo('results')">Back to Results</button>
+                    </div>
+                </div>
+
+                <div class="report-content" id="report-content">
+                    <!-- Dynamic report content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about-page" class="page">
+            <div class="container">
+                <h1 class="page-title">About NoveltyRadar AI</h1>
+                <div class="about-content">
+                    <p>NoveltyRadar AI is an evidence-based, explainable research and student project evaluation platform designed to help students and researchers assess the novelty and feasibility of their project ideas.</p>
+
+                    <h2>Mission</h2>
+                    <p>Our mission is to provide transparent, AI-powered project evaluation that helps students make informed decisions about their research and project directions.</p>
+
+                    <h2>How It Works</h2>
+                    <ul>
+                        <li>Analyze project claims and extract key components</li>
+                        <li>Search relevant research papers from academic databases</li>
+                        <li>Perform claim-wise gap analysis against existing literature</li>
+                        <li>Calculate novelty and feasibility scores with explainable reasoning</li>
+                        <li>Provide improved project directions and recommendations</li>
+                    </ul>
+
+                    <h2>Technology</h2>
+                    <p>NoveltyRadar AI uses advanced NLP techniques, semantic search, and machine learning to provide comprehensive project evaluation. The platform integrates with Semantic Scholar and OpenAlex for academic paper retrieval.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 NoveltyRadar AI. Evidence-Based Project Evaluation Platform.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/mockData.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
